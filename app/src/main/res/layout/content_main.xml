@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!-- vertical ScrollView to make all the items or views scrollable -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Partial Forms"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+    <EditText
+        android:id="@+id/shri"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:ems="10"
+        android:hint="Enter the registration id of a partial form"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/shributton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit the form" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="71dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complete Forms"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+    <EditText
+        android:id="@+id/shri2"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:hint="Enter the registration id of a complete form"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/shributton2"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:text="Search" />
+
+</LinearLayout>

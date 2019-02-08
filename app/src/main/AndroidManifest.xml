@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="shrinidhikr.example.com.traumaform">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".InjuryCodingData" />
+        <activity android:name=".InjuryEventData" />
+        <activity android:name=".DemographicHospital" />
+        <activity android:name=".FirstSetofVitals" />
+        <activity android:name=".EDInvestigations" />
+        <activity android:name=".CTScan" />
+        <activity android:name=".CriticalEDProcedure" />
+        <activity android:name=".PostAdmission" />
+        <activity android:name=".FollowUpData" />
+        <activity android:name=".BasicDetails" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Complete"></activity>
+    </application>
+
+</manifest>

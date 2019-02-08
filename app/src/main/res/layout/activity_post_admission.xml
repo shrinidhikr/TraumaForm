@@ -1,0 +1,979 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+<!-- vertical ScrollView to make all the items or views scrollable -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+    <!-- LinearLayout Inside ScrollView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="404dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Operative Procedures within 48 Hours of Arrival (Post Admission)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+
+
+        <LinearLayout
+            android:id="@+id/firstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="112dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Yes/No" />
+            <Spinner
+                android:id="@+id/spinner47"
+                android:layout_width="262dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="402dp"
+            android:layout_height="39dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Laparotomy"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+            android:id="@+id/Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.1.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/seventhLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.1.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Craniotomy"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+            android:id="@+id/sixthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.2.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/oneLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.2.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Thoracotomy"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+            android:id="@+id/sLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.3.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.3.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Tracheostomy"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+            android:id="@+id/xthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.4.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/thLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.4.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Pelvic Fixation"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+            android:id="@+id/bixthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.5.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/vpenthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.5.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Long bone fixation"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+
+        <LinearLayout
+            android:id="@+id/gixthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.6.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/xventhLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.6.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Peripheral Revascularisation"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+            android:id="@+id/ixthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.7.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pventhLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.7.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Spinal Surgery"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+            android:id="@+id/pthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.8.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/venthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.8.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Soft tissue debridement"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+            android:id="@+id/zixthLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.9.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ppventhLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.9.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        popopop
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Re-implanation"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.10.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.10.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Amputation"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.11.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.11.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Other"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/D47.12.1"
+
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:inputType="date"
+                android:hint=""
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- place one TextView and one EditText inside layout using weight property -->
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Time" />
+
+            <EditText
+                android:id="@+id/D47.12.2"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.4"
+                android:hint=""
+
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/next8"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+
+            android:text="Next" />
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

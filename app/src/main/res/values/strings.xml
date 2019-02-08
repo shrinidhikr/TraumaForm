@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TraumaForm</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Trauma Registry E-Form</string>
+    <string name="nav_header_subtitle">Important Codes
+-1:	Not Applicable
+-2:	Unknown or not available
+-3:	Not recorded or inadequately described
+</string>
+    <string name="nav_header_subtitle1">Unavailable Date/Time
+Date:	31-12-1900
+Time:	12:00 AM</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Sign Out</string>
+    <string name="title_activity_complete">Complete</string>
+</resources>

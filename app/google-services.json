@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "747809748975",
+    "firebase_url": "https://traumaform.firebaseio.com",
+    "project_id": "traumaform",
+    "storage_bucket": "traumaform.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747809748975:android:65d6aec9f444bfc6",
+        "android_client_info": {
+          "package_name": "shrinidhikr.example.com.traumaform"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747809748975-a11hmlk027perfptb3bgk72b9o5ljfkq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "shrinidhikr.example.com.traumaform",
+            "certificate_hash": "b5eace0bddc47c37b376dc340db1779b20a58e0d"
+          }
+        },
+        {
+          "client_id": "747809748975-hrvnnfimt20rilp1bu59n2nebgfbi5fe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIGnM5VWVxieLuRNGlx2413c7pGvItVTk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747809748975-hrvnnfimt20rilp1bu59n2nebgfbi5fe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
