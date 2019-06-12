@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class DemographicHospital extends AppCompatActivity {
     public static EditText D24,D26,D27,D28,D30,D31,D32,D33;
@@ -83,6 +90,87 @@ public class DemographicHospital extends AppCompatActivity {
         });
 
         Button b = (Button) findViewById(R.id.next3);
+
+        if(id.equals("P")||id=="P")
+        {
+
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Partial Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q = 25;
+                    String fp[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fp[i++] = link;
+
+                    }
+
+                    D24.setText(fp[q++]);
+                    spinner25.setSelection(SpinnerValue.getIndex(spinner25, fp[q++]));
+                    D26.setText(fp[q++]);
+                    D27.setText(fp[q++]);
+                    D28.setText(fp[q++]);
+                    spinner29.setSelection(SpinnerValue.getIndex(spinner29, fp[q++]));
+                    D30.setText(fp[q++]);
+                    D31.setText(fp[q++]);
+                    D32.setText(fp[q++]);
+                    D33.setText(fp[q++]);
+
+
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            itemsRef.addListenerForSingleValueEvent(eventListener);
+
+
+
+
+        }
+
+
+        else if(id.equals("C")||id=="C")
+        {
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Complete Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q = 25;
+                    String fc[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fc[i++] = link;
+
+                    }
+
+                    D24.setText(fc[q++]);
+                    spinner25.setSelection(SpinnerValue.getIndex(spinner25, fc[q++]));
+                    D26.setText(fc[q++]);
+                    D27.setText(fc[q++]);
+                    D28.setText(fc[q++]);
+                    spinner29.setSelection(SpinnerValue.getIndex(spinner29, fc[q++]));
+                    D30.setText(fc[q++]);
+                    D31.setText(fc[q++]);
+                    D32.setText(fc[q++]);
+                    D33.setText(fc[q++]);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            itemsRef.addListenerForSingleValueEvent(eventListener);
+
+
+        }
+
+
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

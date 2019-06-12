@@ -103,28 +103,27 @@ public class InjuryEventData extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.e("kess", dataSnapshot.toString());
                     int i = 0, q = 11;
-                    String fp[] = new String[1000];
+                    String fc[] = new String[1000];
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         String link = ds.getValue(String.class);
                         Log.e("TAG", link);
-                        fp[i++] = link;
+                        fc[i++] = link;
 
                     }
-                    D12.setText(fp[q++]);
-                    D13.setText(fp[q++]);D12.setText(fp[q++]);
-                    D13.setText(fp[q++]);
-                    spinner14.setSelection(SpinnerValue.getIndex(spinner14, fp[q++]));
-                    spinner15.setSelection(SpinnerValue.getIndex(spinner15, fp[q++]));
-                    spinner16.setSelection(SpinnerValue.getIndex(spinner16, fp[q++]));
-                    spinner17.setSelection(SpinnerValue.getIndex(spinner17, fp[q++]));
-                    spinner18.setSelection(SpinnerValue.getIndex(spinner18, fp[q++]));
-                    spinner19.setSelection(SpinnerValue.getIndex(spinner19, fp[q++]));
-                    spinner20_1.setSelection(SpinnerValue.getIndex(spinner20_1, fp[q++]));
-                    spinner20_2.setSelection(SpinnerValue.getIndex(spinner20_2, fp[q++]));
-                    spinner20_3.setSelection(SpinnerValue.getIndex(spinner20_3, fp[q++]));
-                    spinner21.setSelection(SpinnerValue.getIndex(spinner21, fp[q++]));
-                    spinner22.setSelection(SpinnerValue.getIndex(spinner22, fp[q++]));
-                    spinner23.setSelection(SpinnerValue.getIndex(spinner23, fp[q++]));
+                    D12.setText(fc[q++]);
+                    D13.setText(fc[q++]);
+                    spinner14.setSelection(SpinnerValue.getIndex(spinner14, fc[q++]));
+                    spinner15.setSelection(SpinnerValue.getIndex(spinner15, fc[q++]));
+                    spinner16.setSelection(SpinnerValue.getIndex(spinner16, fc[q++]));
+                    spinner17.setSelection(SpinnerValue.getIndex(spinner17, fc[q++]));
+                    spinner18.setSelection(SpinnerValue.getIndex(spinner18, fc[q++]));
+                    spinner19.setSelection(SpinnerValue.getIndex(spinner19, fc[q++]));
+                    spinner20_1.setSelection(SpinnerValue.getIndex(spinner20_1, fc[q++]));
+                    spinner20_2.setSelection(SpinnerValue.getIndex(spinner20_2, fc[q++]));
+                    spinner20_3.setSelection(SpinnerValue.getIndex(spinner20_3, fc[q++]));
+                    spinner21.setSelection(SpinnerValue.getIndex(spinner21, fc[q++]));
+                    spinner22.setSelection(SpinnerValue.getIndex(spinner22, fc[q++]));
+                    spinner23.setSelection(SpinnerValue.getIndex(spinner23, fc[q++]));
 
 
                 }

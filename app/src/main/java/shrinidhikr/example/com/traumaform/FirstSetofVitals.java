@@ -4,10 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FirstSetofVitals extends AppCompatActivity {
     public static EditText D34,D35,D36,D37,D38,D39,D40,D41,D42,D43;
@@ -37,6 +44,85 @@ public class FirstSetofVitals extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), id+name,
                 Toast.LENGTH_LONG).show();
         Button b = (Button) findViewById(R.id.next4);
+
+        if(id.equals("P")||id=="P")
+        {
+
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Partial Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q = 35;
+                    String fp[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fp[i++] = link;
+
+                    }
+
+                    D34.setText(fp[q++]);
+                    D35.setText(fp[q++]);
+                    D36.setText(fp[q++]);
+                    D37.setText(fp[q++]);
+                    D38.setText(fp[q++]);
+                    D39.setText(fp[q++]);
+                    D40.setText(fp[q++]);
+                    D41.setText(fp[q++]);
+                    D42.setText(fp[q++]);
+                    D43.setText(fp[q++]);
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            itemsRef.addListenerForSingleValueEvent(eventListener);
+
+
+
+
+        }
+
+
+        else if(id.equals("C")||id=="C")
+        {
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Complete Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q = 35;
+                    String fc[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fc[i++] = link;
+
+                    }
+
+                    D34.setText(fc[q++]);
+                    D35.setText(fc[q++]);
+                    D36.setText(fc[q++]);
+                    D37.setText(fc[q++]);
+                    D38.setText(fc[q++]);
+                    D39.setText(fc[q++]);
+                    D40.setText(fc[q++]);
+                    D41.setText(fc[q++]);
+                    D42.setText(fc[q++]);
+                    D43.setText(fc[q++]);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            itemsRef.addListenerForSingleValueEvent(eventListener);
+
+
+        }
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

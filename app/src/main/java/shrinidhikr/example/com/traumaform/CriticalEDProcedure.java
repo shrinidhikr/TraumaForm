@@ -3,12 +3,19 @@ package shrinidhikr.example.com.traumaform;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class CriticalEDProcedure extends AppCompatActivity {
     String id="";
@@ -26,12 +33,8 @@ public class CriticalEDProcedure extends AppCompatActivity {
         final Spinner spinner46_4 = (Spinner) findViewById(R.id.spinner46_4);
         final Spinner spinner46_5 = (Spinner) findViewById(R.id.spinner46_5);
 
-        Intent intent = getIntent();
-        id= intent.getStringExtra("Parent");
-        name = intent.getStringExtra("Reg_id");
 
-        Toast.makeText(getApplicationContext(), id+name,
-                Toast.LENGTH_LONG).show();
+
         String[] items = new String[]{"Not Selected","1. Yes", "2. No","3. Outside","-1. Not Applicable","-2. Unknown or not available","-3. Not recorded or inadequately described"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
@@ -138,6 +141,86 @@ public class CriticalEDProcedure extends AppCompatActivity {
         });
 
         Button b = (Button) findViewById(R.id.next7);
+
+        Intent intent = getIntent();
+        id= intent.getStringExtra("Parent");
+        name = intent.getStringExtra("Reg_id");
+
+        Toast.makeText(getApplicationContext(), id+name,
+                Toast.LENGTH_LONG).show();
+
+        if(id.equals("P")||id=="P")
+        {
+
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Partial Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q = 73;
+                    String fp[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fp[i++] = link;
+
+                    }
+
+
+                    spinner46_1.setSelection(SpinnerValue.getIndex(spinner46_1,fp[q++]));
+                    spinner46_2.setSelection(SpinnerValue.getIndex(spinner46_2, fp[q++]));
+                    spinner46_3.setSelection(SpinnerValue.getIndex(spinner46_3,fp[q++]));
+                    spinner46_4.setSelection(SpinnerValue.getIndex(spinner46_4, fp[q++]));
+                    spinner46_5.setSelection(SpinnerValue.getIndex(spinner46_5,fp[q++]));
+
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            itemsRef.addListenerForSingleValueEvent(eventListener);
+
+
+
+
+        }
+
+
+        else if(id.equals("C")||id=="C")
+        {
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Complete Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q = 73;
+                    String fc[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fc[i++] = link;
+
+                    }
+
+                    spinner46_1.setSelection(SpinnerValue.getIndex(spinner46_1,fc[q++]));
+                    spinner46_2.setSelection(SpinnerValue.getIndex(spinner46_2, fc[q++]));
+                    spinner46_3.setSelection(SpinnerValue.getIndex(spinner46_3,fc[q++]));
+                    spinner46_4.setSelection(SpinnerValue.getIndex(spinner46_4, fc[q++]));
+                    spinner46_5.setSelection(SpinnerValue.getIndex(spinner46_5,fc[q++]));
+
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            itemsRef.addListenerForSingleValueEvent(eventListener);
+
+
+        }
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

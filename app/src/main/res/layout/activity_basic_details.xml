@@ -18,6 +18,13 @@
             <!-- create a Linear Layout with horizontal orientation and weightSum property -->
 
 
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Basic Details"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
             <LinearLayout
                 android:id="@+id/firstLayout"

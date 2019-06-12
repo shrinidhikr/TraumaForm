@@ -16,10 +16,20 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.Map;
+
+import static shrinidhikr.example.com.traumaform.share.auth;
+import static shrinidhikr.example.com.traumaform.share.editor;
 
 
 class Addinjury extends AppCompatActivity {
@@ -140,8 +150,8 @@ public class InjuryCodingData extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                share.auth = getApplicationContext().getSharedPreferences("0001", Context.MODE_PRIVATE);
-                Map<String,?> keys = share.auth.getAll();
+                auth = getApplicationContext().getSharedPreferences("0001", Context.MODE_PRIVATE);
+                Map<String,?> keys = auth.getAll();
                 Log.e("Keys",keys.toString());
 
 
@@ -201,16 +211,77 @@ public class InjuryCodingData extends AppCompatActivity {
 
                         FinalPush.child("R"+res).child(K).setValue(V);
                     }
+                    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Complete Reg");
+                    try {
+                        DatabaseReference itemsRef = rootRef.child(res);
+                        ValueEventListener eventListener = new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                Log.e("kess", dataSnapshot.toString());
+                                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                                    String link = ds.getValue(String.class);
+                                    Log.e("TAG", link);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {}
+                        };
+                        itemsRef.addListenerForSingleValueEvent(eventListener);
+
+                        Toast.makeText(getApplicationContext(),"Successful",Toast.LENGTH_LONG).show();
+
+                        auth = getApplicationContext().getSharedPreferences("0001", Context.MODE_PRIVATE);
+                        editor = auth.edit();
+
+                        for(int i=1;i<=116;i++)
+                            editor.putString(String.valueOf(i),"");
+                        editor.apply();
+
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Partial Reg");
+                        Query applesQuery = ref.child(res).equalTo(res);
+
+                        applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
+                                    appleSnapshot.getRef().removeValue();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                Log.e("TAG", "onCancelled", databaseError.toException());
+                            }
+                        });
+
+                        DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference("Partial Database");
+                        Query applesQuery1 = ref.child("R"+res);
+
+                        applesQuery1.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
+                                    appleSnapshot.getRef().removeValue();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                Log.e("TAG", "onCancelled", databaseError.toException());
+                            }
+                        });
+                    }
+                    catch(Exception e) {
+                        Toast.makeText(getApplicationContext(),"Unsuccessful",Toast.LENGTH_LONG).show();
+                    }
                 }
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
-                
 
             }
         });
-
-
 
     }
 }

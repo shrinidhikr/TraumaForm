@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class EDInvestigations extends AppCompatActivity {
     public static EditText D44_2,D44_3,D45_1_2,D45_1_3,D45_2_2,D45_2_3,D45_3_2,D45_3_3;
@@ -46,6 +53,91 @@ public class EDInvestigations extends AppCompatActivity {
 
 
         Button b = (Button) findViewById(R.id.next5);
+
+        if(id.equals("P")||id=="P")
+        {
+
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Partial Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q = 45;
+                    String fp[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fp[i++] = link;
+
+                    }
+
+
+                    spinner44_1.setSelection(SpinnerValue.getIndex(spinner44_1,fp[q++]));
+                    D44_2.setText(fp[q++]);
+                    D44_3.setText(fp[q++]);
+                    spinner45.setSelection(SpinnerValue.getIndex(spinner45, fp[q++]));
+                    spinner45_1_1_.setSelection(SpinnerValue.getIndex(spinner45_1_1_, fp[q++]));
+                    D45_1_2.setText(fp[q++]);
+                    D45_1_3.setText(fp[q++]);
+                    spinner45_2_1.setSelection(SpinnerValue.getIndex(spinner45_2_1, fp[q++]));
+                    D45_2_2.setText(fp[q++]);
+                    D45_2_3.setText(fp[q++]);
+                    spinner45_3_1.setSelection(SpinnerValue.getIndex(spinner45_3_1, fp[q++]));
+                    D45_3_2.setText(fp[q++]);
+                    D45_3_3.setText(fp[q++]);
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            itemsRef.addListenerForSingleValueEvent(eventListener);
+
+
+        }
+
+
+        else if(id.equals("C")||id=="C")
+        {
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Complete Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q = 45;
+                    String fc[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fc[i++] = link;
+
+                    }
+
+                    spinner44_1.setSelection(SpinnerValue.getIndex(spinner44_1,fc[q++]));
+                    D44_2.setText(fc[q++]);
+                    D44_3.setText(fc[q++]);
+                    spinner45.setSelection(SpinnerValue.getIndex(spinner45, fc[q++]));
+                    spinner45_1_1_.setSelection(SpinnerValue.getIndex(spinner45_1_1_, fc[q++]));
+                    D45_1_2.setText(fc[q++]);
+                    D45_1_3.setText(fc[q++]);
+                    spinner45_2_1.setSelection(SpinnerValue.getIndex(spinner45_2_1, fc[q++]));
+                    D45_2_2.setText(fc[q++]);
+                    D45_2_3.setText(fc[q++]);
+                    spinner45_3_1.setSelection(SpinnerValue.getIndex(spinner45_3_1, fc[q++]));
+                    D45_3_2.setText(fc[q++]);
+                    D45_3_3.setText(fc[q++]);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            itemsRef.addListenerForSingleValueEvent(eventListener);
+
+
+        }
+
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +25,7 @@ public class BasicDetails extends Activity {
     public static EditText D1,D2,D3,D4,D6,D7,D8,D9,D10;
     String id="";
     String name="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,6 @@ public class BasicDetails extends Activity {
 
        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         final Spinner spinner11 = (Spinner) findViewById(R.id.spinner11);
-
 
 
 
@@ -97,40 +96,41 @@ public class BasicDetails extends Activity {
        id= intent.getStringExtra("Parent");
        name = intent.getStringExtra("Reg_id");
 
+
         Toast.makeText(getApplicationContext(), id+name,
                 Toast.LENGTH_LONG).show();
 
         if(id.equals("P")||id=="P")
         {
 
-           DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Partial Database");
-                DatabaseReference itemsRef = rootRef.child("R"+name);
-                ValueEventListener eventListener = new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        Log.e("kess", dataSnapshot.toString());
-                        int i = 0, q = 0;
-                        String fp[] = new String[200];
-                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                            String link = ds.getValue(String.class);
-                            Log.e("TAG", link);
-                            fp[i++] = link;
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Partial Database");
+            DatabaseReference itemsRef = rootRef.child("R"+name);
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.e("kess", dataSnapshot.toString());
+                    int i = 0, q=0;
+                    String fp[] = new String[200];
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        String link = ds.getValue(String.class);
+                        Log.e("TAG", link);
+                        fp[i++] = link;
 
-                        }
-               for(int l=0;l<i;l++)
-                    Log.e("Fetchvalue", fp[l]);
-                        D1.setText(fp[q++]);
-                        D2.setText(fp[q++]);
-                        D3.setText(fp[q++]);
-                        D4.setText(fp[q++]);
-                        spinner.setSelection(SpinnerValue.getIndex(spinner, fp[q++]));
-                        D6.setText(fp[q++]);
-                        D7.setText(fp[q++]);
-                        D8.setText(fp[q++]);
-                        D9.setText(fp[q++]);
-                        D10.setText(fp[q++]);
-                        spinner11.setSelection(SpinnerValue.getIndex(spinner11, fp[q++]));
                     }
+
+                    D1.setText(fp[q++]);
+                    D2.setText(fp[q++]);
+                    D3.setText(fp[q++]);
+                    D4.setText(fp[q++]);
+                    spinner.setSelection(SpinnerValue.getIndex(spinner,fp[q++]));
+                    D6.setText(fp[q++]);
+                    D7.setText(fp[q++]);
+                    D8.setText(fp[q++]);
+                    D9.setText(fp[q++]);
+                    D10.setText(fp[q++]);
+                    spinner11.setSelection(SpinnerValue.getIndex(spinner11, fp[q++]));
+
+                }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {}
@@ -139,6 +139,8 @@ public class BasicDetails extends Activity {
 
 
         }
+
+
         else if(id.equals("C")||id=="C")
         {
             DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Complete Database");
@@ -147,27 +149,27 @@ public class BasicDetails extends Activity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.e("kess", dataSnapshot.toString());
-                    int i = 0, q = 0;
-                    String fp[] = new String[1000];
+                    int i = 0, q=0;
+                    String fc[] = new String[200];
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         String link = ds.getValue(String.class);
                         Log.e("TAG", link);
-                        fp[i++] = link;
+                        fc[i++] = link;
 
                     }
-                    for(int l=0;l<i;l++)
-                        Log.e("Fetchvalue", fp[l]);
-                    D1.setText(fp[q++]);
-                    D2.setText(fp[q++]);
-                    D3.setText(fp[q++]);
-                    D4.setText(fp[q++]);
-                    spinner.setSelection(SpinnerValue.getIndex(spinner, fp[q++]));
-                    D6.setText(fp[q++]);
-                    D7.setText(fp[q++]);
-                    D8.setText(fp[q++]);
-                    D9.setText(fp[q++]);
-                    D10.setText(fp[q++]);
-                    spinner11.setSelection(SpinnerValue.getIndex(spinner, fp[q++]));
+
+                    D1.setText(fc[q++]);
+                    D2.setText(fc[q++]);
+                    D3.setText(fc[q++]);
+                    D4.setText(fc[q++]);
+                    spinner.setSelection(SpinnerValue.getIndex(spinner, fc[q++]));
+                    D6.setText(fc[q++]);
+                    D7.setText(fc[q++]);
+                    D8.setText(fc[q++]);
+                    D9.setText(fc[q++]);
+                    D10.setText(fc[q++]);
+                    spinner11.setSelection(SpinnerValue.getIndex(spinner, fc[q++]));
+
                 }
 
                 @Override
